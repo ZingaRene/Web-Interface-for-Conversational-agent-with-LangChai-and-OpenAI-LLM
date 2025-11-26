@@ -32,7 +32,7 @@ import warnings
 warnings.filterwarnings('ignore')
 
 # Configuração do título da página
-st.set_page_config(page_title = "DSA")
+st.set_page_config(page_title = "ZBFR")
 
 # Criação de colunas para layout da página
 # Define a proporção das colunas
@@ -40,7 +40,7 @@ col1, col4 = st.columns([4, 1])
 
 # Configuração da primeira coluna para exibir o título do projeto
 with col1:
-    st.title("Projeto 6 - Construção e Deploy de Interface Web Para Agente de Conversação e Busca com LangChain e LLM")
+    st.title("Building and Deploying a Web Interface for a Conversational and Search Agent with LangChain and LLM")
 
 # Campo para entrada da chave de API da OpenAI
 openai_api_key = st.sidebar.text_input("OpenAI API Key", type = "password")
@@ -92,12 +92,12 @@ for idx, msg in enumerate(msgs.messages):
         st.write(msg.content)  
 
 # Campo de entrada para novas mensagens do usuário
-if prompt := st.chat_input(placeholder = "Digite uma pergunta para começar!"):
+if prompt := st.chat_input(placeholder = "Type a question to get started..!"):
     st.chat_message("user").write(prompt)
 
     # Verificação da chave de API
     if not openai_api_key:
-        st.info("Adicione sua OpenAI API key para continuar.")
+        st.info("Add your OpenAI API key to continue.")
         st.stop()
 
     # Configuração do modelo de linguagem da OpenAI
